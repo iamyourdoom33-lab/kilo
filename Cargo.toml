@@ -1,0 +1,54 @@
+[workspace]
+members = [
+    "crates/engine",
+    "crates/engine/window",
+    "crates/engine/vrm",
+    "crates/engine/behavior",
+    "crates/engine/interaction",
+    "crates/platform",
+    "crates/platform/windows",
+    "crates/platform/macos",
+    "crates/platform/linux",
+    "crates/ui",
+    "crates/utils",
+    "desktop-friend",
+]
+resolver = "2"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+repository = "https://github.com/convoy/desktop-friend"
+
+[workspace.dependencies]
+# Core engine
+bevy = "0.15"
+bevy_vrm1 = "0.6"
+
+# Window Management
+winit = "0.30"
+
+# Serialization
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+ron = "0.8"
+
+# Audio
+rodio = "0.17"
+
+# Utilities
+anyhow = "1.0"
+thiserror = "1.0"
+log = "0.4"
+env_logger = "0.11"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true
+
+[profile.dev]
+split-debuginfo = "unpacked"

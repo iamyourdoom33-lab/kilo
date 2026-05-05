@@ -1,0 +1,11 @@
+[package]
+name = "linux"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+platform.workspace = true
+x11.workspace = true
+wayland-client.workspace = true
+anyhow.workspace = true

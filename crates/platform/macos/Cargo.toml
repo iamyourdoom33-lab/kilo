@@ -1,0 +1,11 @@
+[package]
+name = "macos"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+platform.workspace = true
+cocoa.workspace = true
+objc.workspace = true
+anyhow.workspace = true
